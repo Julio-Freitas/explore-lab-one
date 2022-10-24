@@ -1,0 +1,61 @@
+.logo-icon {
+  border-radius: 100%;
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+  display: flex;
+  justify-content: center;
+  bottom: 4px;
+  right: 10px;
+}
+
+.logo-spin {
+  border: 8px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  color: blue;
+}
+.logo-spin::after,
+.logo-spin::before {
+  content: "";
+  position: absolute;
+  border: 3px solid transparent;
+  border-top-color: currentColor;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.logo-spin::after {
+  left: -11px;
+  top: -10px;
+}
+
+.logo-spin::before {
+  left: -19px;
+  top: -20px;
+  width: 35px;
+}
+.logo-spin.active {
+  animation: icon-1 1s forwards infinite;
+}
+.logo-spin.active::before {
+  animation: icon-1 1.2s forwards infinite;
+}
+
+.logo-spin.active::after {
+  animation: icon-1 0.9s forwards infinite;
+}
+
+@keyframes icon-1 {
+  0% {
+    border-top-color: currentColor;
+  }
+  50% {
+    border-top-color: rgba(0, 0, 255, 0.445);
+  }
+  100% {
+    border-top-color: rgba(0, 0, 255, 0.9);
+  }
+}

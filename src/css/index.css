@@ -1,0 +1,135 @@
+@import "base.css";
+@import "credit-card.css";
+@import "form.css";
+@import "logo-spin.css";
+
+@media (max-width: 420px) {
+  :root {
+    font-size: 50%;
+  }
+
+  body {
+    background: #202024;
+  }
+
+  #app {
+    background: none;
+    border: none;
+  }
+
+  .cc-bg svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 780px) {
+  #app {
+    grid-template-areas:
+      "A A A"
+      "C B D"
+      "C B D";
+
+    width: fit-content;
+    max-width: fit-content;
+    padding-inline: 4.8rem;
+
+    grid-template-columns: 0.8fr 1fr 1fr;
+  }
+
+  #app header {
+    grid-area: A;
+    max-width: 275px;
+  }
+
+  #app section.cc {
+    grid-area: B;
+    align-self: center;
+  }
+
+  #app form {
+    grid-area: C;
+  }
+
+  #app section#card-list {
+    grid-area: D;
+  }
+
+  ul.cards {
+    list-style: inside;
+    list-style-type: none;
+    display: flex;
+    margin-top: 1.5rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  ul.cards li.cards-item {
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: #121214;
+    flex: 1;
+    border-radius: 3px;
+    transition: all 0.5s;
+  }
+
+  .cards-item__name {
+    color: #fff;
+    text-align: left;
+    align-self: flex-start;
+    flex: 1;
+  }
+  .checkbox-card__action {
+    padding: 18px 6px;
+    flex: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .checkbox-card__action input[type="checkbox"] {
+    display: none;
+  }
+
+  .checkbox-card__action .checkbox {
+    position: relative;
+  }
+  /* .checkbox-card__action .checkbox::before {
+    content: " ";
+    display: inline-flex;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 3px;
+  } */
+
+  li:has(> .checkbox-card__action .checkbox input[type="checkbox"]:checked)
+    > .checkbox-card__action::before {
+    background-color: #326589;
+  }
+  .checkbox-card__action .checkbox .gg-trash {
+    margin-left: 5px;
+  }
+
+  /* li:has(> .checkbox-card__action input[type="checkbox"]:checked)
+    > .checkbox-card__action
+    .checkbox::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    transform-origin: bottom left;
+    transform: rotate(45deg);
+    color: #326589;
+  } */
+  li:has(> .checkbox-card__action input[type="checkbox"]:checked) {
+    background: linear-gradient(97.54deg, #002f52 35.49%, #326589 165.37%);
+  }
+}
