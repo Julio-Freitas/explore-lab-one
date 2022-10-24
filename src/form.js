@@ -118,7 +118,7 @@ const resetData = () => {
 
 const addCardInStorage = ({ list, value }) => {
   const newListStorage = [];
-  if (list.length > 0) {
+  if (list && list.length > 0) {
     const lastIndex = list.length - 1;
     const lastItem = list[lastIndex];
     const newCards = {
